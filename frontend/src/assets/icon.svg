@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="#0F172A"></circle>
+
+  <!-- Chat bubble -->
+  <rect x="120" y="130" rx="50" ry="50" width="272" height="200" fill="#38BDF8"></rect>
+  <polygon points="200,330 200,390 260,330" fill="#38BDF8"></polygon>
+
+  <!-- Letter H -->
+  <text x="256" y="285" font-size="140" font-weight="700" text-anchor="middle" fill="#0F172A" font-family="Arial, Helvetica, sans-serif">
+    H
+  </text>
+
+  <!-- Chatbot eyes -->
+  <circle cx="210" cy="210" r="10" fill="#0F172A"></circle>
+  <circle cx="302" cy="210" r="10" fill="#0F172A"></circle>
+
+</svg>

@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .glass-sidebar {
+        @apply bg-[#0a0f1d]/95 backdrop-blur-xl border-r border-indigo-900/30;
+    }
+
+    .glass-card {
+        @apply bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)];
+    }
+
+    .floating-capsule {
+        @apply flex items-end gap-3 rounded-[2rem] border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg px-6 py-4 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300;
+    }
+
+    .textile-pattern {
+        background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0);
+        background-size: 24px 24px;
+        background-position: -19px -19px;
+    }
+
+    .dark .textile-pattern {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 0);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-slate-200 dark:bg-slate-700 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors;
+    }
+}
+
+body {
+    @apply transition-colors duration-300;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+}
