@@ -4,8 +4,8 @@ Trợ lý ảo AI thông minh phục vụ nội bộ, chuyên hỗ trợ giải 
 
 ## 🌟 Tính năng nổi bật
 
-- **Hỏi đáp thông minh (RAG)**: Truy xuất kiến thức trực tiếp từ các tài liệu nội bộ của Brotex (PDF, Docx).
-- **Phân tích công thức (MathGuard)**: Tự động nhận diện và tính toán các công thức R&D phức tạp (lương, thuế, định mức dệt may).
+- **Hỏi đáp thông minh (RAG)**: Truy xuất kiến thức trực tiếp từ các tài liệu nội bộ (PDF, Docx,...).
+- **Phân tích công thức (MathGuard)**: Tự động nhận diện và tính toán các công thức phức tạp (lương, thuế,...).
 - **Giao diện ChatGPT-style**: Trải nghiệm trò chuyện mượt mà, hỗ trợ đa ngôn ngữ (Tiếng Việt, Tiếng Trung, Tiếng Anh).
 - **Hủy bỏ yêu cầu tức thì (True Abortion)**: Khả năng dừng tạo câu trả lời ngay lập tức để tiết kiệm tài nguyên.
 - **Quản lý hội thoại**: Lưu trữ lịch sử chat, quản lý Thread thông minh.
