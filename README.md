@@ -14,32 +14,27 @@ Trợ lý ảo AI thông minh phục vụ nội bộ, chuyên hỗ trợ giải 
 
 ```mermaid
 graph TD
-    classDef frontend fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#fff
-    classDef backend fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff
-    classDef ai fill:#f59e0b,stroke:#b45309,stroke-width:2px,color:#fff
-    classDef db fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff
-
     subgraph "Presentation Layer"
-        UI["💻 React.js SPA<br/>(TailwindCSS)"]:::frontend
+        UI["React.js SPA (TailwindCSS)"]
     end
 
     subgraph "Application Logic Layer"
-        API["⚙️ Node.js Gateway<br/>(Express API)"]:::backend
-        SOCKET["🔌 Socket.IO TCP<br/>(Realtime Server)"]:::backend
-        QUEUE["⏳ BullMQ<br/>(Job Manager)"]:::backend
-        WORKER["🛠️ BullMQ Worker"]:::backend
+        API["Node.js Gateway (Express API)"]
+        SOCKET["Socket.IO TCP (Realtime Server)"]
+        QUEUE["BullMQ (Job Manager)"]
+        WORKER["BullMQ Worker"]
     end
 
     subgraph "AI / ML Engine Layer"
-        FASTAPI["🧠 FastAPI API Gateway"]:::ai
-        AGENT["🤖 Orchestrator Agent"]:::ai
-        LLM["⚙️ Local LLM (Ollama)"]:::ai
+        FASTAPI["FastAPI API Gateway"]
+        AGENT["Orchestrator Agent"]
+        LLM["Local LLM (Ollama)"]
     end
 
     subgraph "Persistence Layer (Storage / Memory)"
-        REDIS[("⚡ Redis<br>(Cache/PubSub/Queue)")]:::db
-        SQLITE[("🗄️ SQLite<br/>(Users/Chat History)")]:::db
-        CHROMA[("📊 ChromaDB<br/>(Vector Embeddings)")]:::db
+        REDIS[("Redis (Cache/PubSub/Queue)")]
+        SQLITE[("SQLite (Users/Chat History)")]
+        CHROMA[("ChromaDB (Vector Embeddings)")]
     end
 
     UI <--> API
@@ -58,17 +53,14 @@ graph TD
 Luồng đi của một câu hỏi từ khi Người dùng gõ đến khi có kết quả Realtime.
 ```mermaid
 graph LR
-    classDef step fill:#f8fafc,stroke:#334155,stroke-width:2px,color:#0f172a
-    classDef data fill:#fdf4ff,stroke:#c026d6,stroke-width:2px,color:#701a75
-
     USER((User))
-    API["Thêm Job vào Queue"]:::step
-    REDIS[("Redis")]:::data
-    WORKER["Python nhận Job"]:::step
-    ROUTER{"Phân loại Intent"}:::step
-    QA["Truy xuất Docs"]:::step
-    LLM["Sinh Text (LLM)"]:::step
-    SOCKET["Stream Tokens<br>qua Websocket"]:::step
+    API["Thêm Job vào Queue"]
+    REDIS[("Redis")]
+    WORKER["Python nhận Job"]
+    ROUTER{"Phân loại Intent"}
+    QA["Truy xuất Docs"]
+    LLM["Sinh Text (LLM)"]
+    SOCKET["Stream Tokens<br>qua Websocket"]
 
     USER -->|1. Request| API
     API -->|2. Push| REDIS
@@ -87,23 +79,19 @@ graph LR
 Quy trình ra quyết định của tác tử AI bên trong tầng Python FastAPI.
 ```mermaid
 graph TD
-    classDef init fill:#eff6ff,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
-    classDef decision fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
-    classDef tool fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#166534
-
-    INPUT["Nhận Query từ Node.js"]:::init
-    FORMAT["Format lại Query"]:::init
+    INPUT["Nhận Query từ Node.js"]
+    FORMAT["Format lại Query"]
     
-    INTENT{"Intent Agent<br/>(Dự đoán mục đích)"}:::decision
+    INTENT{"Intent Agent<br/>(Dự đoán mục đích)"}
     
-    TOOL1["MathGuard Agent<br/>(Chạy Python Eval)"]:::tool
-    TOOL2["Vector Retriever<br/>(ChromaDB Top-K)"]:::tool
-    TOOL3["Direct Conversation<br/>(Chào hỏi/Quy tắc)"]:::tool
+    TOOL1["MathGuard Agent<br/>(Chạy Python Eval)"]
+    TOOL2["Vector Retriever<br/>(ChromaDB Top-K)"]
+    TOOL3["Direct Conversation<br/>(Chào hỏi/Quy tắc)"]
     
-    DRAFT["Drafting Agent<br/>(Viết nháp dựa trên Context)"]:::init
-    VALIDATE{"Validation Agent<br/>(Tránh Hallucination)"}:::decision
+    DRAFT["Drafting Agent<br/>(Viết nháp dựa trên Context)"]
+    VALIDATE{"Validation Agent<br/>(Tránh Hallucination)"}
     
-    OUTPUT["Trả kết quả Cuối"]:::init
+    OUTPUT["Trả kết quả Cuối"]
 
     INPUT --> FORMAT
     FORMAT --> INTENT
