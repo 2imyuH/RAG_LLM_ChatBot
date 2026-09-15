@@ -26,7 +26,7 @@ backend/
 │   └── sockets/
 │       └── socket.handler.js # Socket.IO handlers
 ├── package.json
-├── .env.example
+├── .env
 └── README.md
 ```
 
@@ -45,10 +45,7 @@ backend/
 npm install
 ```
 
-2. Copy `.env.example` to `.env` and configure:
-```bash
-cp .env.example .env
-```
+2. Creat `.env` and configure:
 
 3. Ensure Redis is running:
 ```bash
