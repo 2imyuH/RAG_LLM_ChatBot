@@ -62,7 +62,7 @@ npm run dev
 
 ## Environment Variables
 
-See `.env.example` for all configuration options.
+See `.env` for all configuration options.
 
 Key variables:
 - `PORT`: Backend server port (default: 5000)
