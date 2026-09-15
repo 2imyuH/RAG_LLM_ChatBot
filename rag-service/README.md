@@ -20,7 +20,7 @@ rag-service/
 
 ## Environment Variables
 
-See `.env.example` for all available configuration options.
+See `.env` for all available configuration options.
 
 Key variables:
 - `DATA_DIR`: Directory to watch for documents
